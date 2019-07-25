@@ -34,7 +34,7 @@ class TodoList extends React.Component{
                         ))
                     }
                 </ul>
-                <div>
+                <div  style={{marginBottom:'20px'}}>
                     <span>{this.state.count}</span>
                     <button onClick={this.addClick}>添加</button>
                 </div>

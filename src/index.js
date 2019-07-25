@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import './index.css'
 import TodoList from './components/TodoList.js'
 import TagList from './components/TagList.js'
+import Control from './components/Control.js'
+import UnControl from './components/UnControl.js'
 const topList = [
     {
       id: 0,
@@ -72,49 +74,7 @@ const topList = [
       hot: '20万'
     }
   ]
-let element =(
-  <div className="wrapper">
-      <div className="search-title-box">
-          <h5 className="search-title" style={{color:'red'}}>搜索热点</h5>
-          <span className="refresh">换一换</span>
-          <div dangerouslySetInnerHTML = { {__html:'危险容易被XSS攻击'} }></div>
-      </div>
-      <ul className="top-list-container">
-          {
-              topList.map((item,index)=>{
-                  const indexStyle = {};
-                  switch (index) {
-                      case 0:
-                          indexStyle.backgroundColor = '#f54545';
-                          break;
-                      case 1:
-                          indexStyle.backgroundColor = '#ff8547';
-                          break;
-                      case 2:
-                          indexStyle.backgroundColor = '#ffac38';
-                          break;
-                      default:
-                          break;
-                  }
-                  return (
-                      <li className="top-list" key={item.id}>
-                          <div className="top-title">
-                              <span className="hot-index" style={ indexStyle }>{index+1}</span>
-                              <a className="topic-title">{item.title}</a>
-                              {
-                                  item.new ? <span className="topic-new">新</span>:''
-                              }
-                          </div>
-                          <div className="hot-degree">
-                              <span>{item.hot}</span>
-                          </div>
-                      </li>
-                  )
-              })
-          }
-      </ul>
-  </div>
-)
+
 
 
 //react有两种组件的添加方法：1.函数式  2.类
@@ -122,6 +82,8 @@ ReactDOM.render(
   <>
     <TagList list = { topList }></TagList>
     <TodoList></TodoList>
+    <Control></Control>
+    <UnControl></UnControl>
   </>, 
   document.getElementById('root')
 );
