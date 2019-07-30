@@ -6,6 +6,8 @@ import TodoList from './components/TodoList.js'
 import TagList from './components/TagList.js'
 import Control from './components/Control.js'
 import UnControl from './components/UnControl.js'
+import Person from './components/Person.js'
+import TodoWrapper from './todoListComponents/TodoWrapper.js';
 const topList = [
     {
       id: 0,
@@ -75,11 +77,18 @@ const topList = [
     }
   ]
 
-
+const person = {
+  // name:'rmx',
+  age:20,
+  height:175,
+  sex:'男'
+}
 
 //react有两种组件的添加方法：1.函数式  2.类
 ReactDOM.render(
   <>
+    <TodoWrapper></TodoWrapper>
+    <Person {...person}></Person>
     <TagList list = { topList }></TagList>
     <TodoList></TodoList>
     <Control></Control>

@@ -4,7 +4,7 @@ import React from 'react';
 //无状态组件
 //函数式会自动添加render(){}方法
 function TagList(props){
-    console.log(props);
+    // console.log(props);
     let {list} = props;
     return (
         <div className="wrapper">
