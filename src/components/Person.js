@@ -12,8 +12,8 @@ class Person extends React.Component{
         sex:PropTypes.oneOf(['男','女'])
     }
     render(){
-        console.log(this)
-        console.log(this.props)
+        // console.log(this)
+        // console.log(this.props)
         //解构赋值一下
         let {name,age,height,sex} = this.props;
         return (

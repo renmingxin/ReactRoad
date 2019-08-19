@@ -7,7 +7,6 @@ class TodoWrapper extends React.Component{
     state = {
         list:[]
     }
-
     render(){
         return (
             <>

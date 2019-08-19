@@ -8,6 +8,8 @@ import Control from './components/Control.js'
 import UnControl from './components/UnControl.js'
 import Person from './components/Person.js'
 import TodoWrapper from './todoListComponents/TodoWrapper.js';
+import LifeCycle from './life/LifeCycle.js'
+
 const topList = [
     {
       id: 0,
@@ -87,12 +89,20 @@ const person = {
 //react有两种组件的添加方法：1.函数式  2.类
 ReactDOM.render(
   <>
-    <TodoWrapper></TodoWrapper>
-    <Person {...person}></Person>
-    <TagList list = { topList }></TagList>
-    <TodoList></TodoList>
-    <Control></Control>
-    <UnControl></UnControl>
+    {/* React的生命周期 */}
+    <LifeCycle></LifeCycle>
+    {/* ↓↓组件嵌套父子之间通信↓↓↓ */}
+    {/* <TodoWrapper></TodoWrapper>  */}
+    {/* ↓↓组件父传子对象props传递↓↓↓ */}
+    {/* <Person {...person}></Person> */}
+    {/* ↓↓组件父传子props传递↓↓↓ */}
+    {/* <TagList list = { topList }></TagList> */}
+    {/* 类写法 */}
+    {/* <TodoList></TodoList> */}
+    {/* 受控组件 */}
+    {/* <Control></Control> */}
+    {/* 非受控组件 */}
+    {/* <UnControl></UnControl> */}
   </>, 
   document.getElementById('root')
 );
