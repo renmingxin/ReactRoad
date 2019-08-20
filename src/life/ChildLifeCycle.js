@@ -15,7 +15,6 @@ class ChildLifeCycle extends React.Component{
         //可以进行状态的设置，也可以发送ajax请求 官方也不建议 在16.3也被移除了
         console.log('2.componentWillReceiveProps')
     }
-
     shouldComponentUpdate(){
         console.log('2.shouldComponentUpdate')
         return true;

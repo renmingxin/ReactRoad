@@ -38,7 +38,7 @@ class LifeCycle extends React.Component{
                     :''
                 }
                  */}
-                 <LifeCycle167></LifeCycle167>
+                 <LifeCycle167 n={this.state.count}></LifeCycle167>
             </>
         )
     }

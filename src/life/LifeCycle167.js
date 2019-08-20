@@ -9,7 +9,9 @@ class LifeCycle167 extends React.Component {
     constructor(){
         console.log('3.constructor')
         super();
-        this.state = {}
+        this.state = {
+            childCount:0
+        }
     }
 
     static getDerivedStateFromProps(){
@@ -20,12 +22,42 @@ class LifeCycle167 extends React.Component {
     render(){
         console.log('3.render')
         return (
-            <div>LifeCycle167</div>
+            <div>
+               <div>另一个子组件的childCount值：{this.state.childCount}</div> 
+               <button onClick={ this.handleClick }>增加childCount的值</button>
+            </div>
         )
     }
 
     componentDidMount(){
         console.log('3.componentDidMount')
+    }
+
+    shouldComponentUpdate(){
+        console.log('3.shouldComponentUpdate')
+        return true;
+    }
+
+    //拿到之前的快照
+    getSnapshotBeforeUpdate(){
+        // 必须和componentDidUpdate写在一起
+        console.log('3.getSnapshotBeforeUpdate')
+        return {
+            a:10
+        };
+    }
+
+    
+    componentDidUpdate(prevProps, prevState, snapShot){
+        console.log(prevProps, prevState, snapShot)//{n: 0} {childCount: 0} {a: 10}
+        console.log('3.componentDidUpdate')
+    }
+
+
+    handleClick = ()=>{
+        this.setState({
+            childCount:this.state.childCount+1
+        })
     }
 }
 
