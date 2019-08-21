@@ -1,7 +1,16 @@
 import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
+import { 
+  BrowserRouter as Router, //没有#号
+  Route,    //路由标签
+  Switch,   //Switch： 匹配到一个就不会往下匹配
+  Redirect, //重定向(输入不存在的路由会重定向到设置的页面)
+  Link,     //路由跳转链接
+  NavLink   //提供活动标识链接 （高亮代表选择）
+} from 'react-router-dom';
 
 import './index.css'
+import './style/routerCss.css'
 import TodoList from './components/TodoList.js'
 import TagList from './components/TagList.js'
 import Control from './components/Control.js'
@@ -9,6 +18,12 @@ import UnControl from './components/UnControl.js'
 import Person from './components/Person.js'
 import TodoWrapper from './todoListComponents/TodoWrapper.js';
 import LifeCycle from './life/LifeCycle.js'
+
+import Home from './pages/Home/Home.js'
+import Activities from './pages/Activities/Activities.js'
+import Topics from './pages/Topics/Topics.js'
+import Login from './pages/Login/Login.js'
+import App from './App.js'
 
 const topList = [
     {
@@ -89,8 +104,22 @@ const person = {
 //react有两种组件的添加方法：1.函数式  2.类
 ReactDOM.render(
   <>
+    {/* React-Router使用 */}
+    <Router>
+        <App>
+          {/*Switch： 匹配到一个就不会往下匹配 */}
+          <Switch>
+            {/* 严格包含关系 */}
+            <Route path="/" exact component={Home}></Route>
+            <Route path="/activities" component={Activities}></Route>
+            <Route path="/topics" component={Topics}></Route>
+            <Route path="/login" component={Login}></Route>
+            <Redirect to="/"></Redirect>
+          </Switch>
+        </App>
+    </Router>
     {/* React的生命周期 */}
-    <LifeCycle></LifeCycle>
+    {/* <LifeCycle></LifeCycle> */}
     {/* ↓↓组件嵌套父子之间通信↓↓↓ */}
     {/* <TodoWrapper></TodoWrapper>  */}
     {/* ↓↓组件父传子对象props传递↓↓↓ */}
