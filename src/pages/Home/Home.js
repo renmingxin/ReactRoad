@@ -1,22 +1,63 @@
 import React, { Component } from 'react'
 
 export default class Home extends Component {
+    authorInput = React.createRef();
+    articleInput = React.createRef();
     render() {
+        console.log(this.authorInput)
         return (
             <div>
                 <header>发表话题</header>
                 <content>
-                    <div>
-                        <span>作者姓名:</span>
-                        <input type="text"/>
-                    </div>
-                    <div>
-                        <span>文章标题:</span>
-                        <input type="text"/>
-                    </div>
+                    <form onSubmit= {this.handleSubmit}>
+                        <div>
+                            <label htmlFor="author">作者姓名:</label>
+                            <input 
+                            id="author" 
+                            required 
+                            type="text"
+                            ref={this.authorInput}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="article">文章标题:</label>
+                            <input 
+                            id="article" 
+                            required 
+                            type="text"
+                            ref={this.articleInput}
+                            />
+                        </div>
+                        <button>提交</button>
+                    </form>
                 </content>
-                <button>提交</button>
             </div>
         )
     }
+    handleSubmit=(e)=>{
+        e.preventDefault();//阻止默认事件的发生
+
+        const author = this.authorInput.current.value;
+        const title = this.articleInput.current.value;
+        const id = Math.floor(Math.random() * 1000000000);
+        
+        const article = {
+            id,
+            author,
+            title
+        }
+        this.setArticleStorage(article);
+    }
+
+    setArticleStorage = (article)=>{
+        const articleList = JSON.parse(localStorage.getItem('articleList')) || [];
+        articleList.push(article);
+        localStorage.setItem('articleList',JSON.stringify(articleList));
+        this.jumpLink();
+    }
+    jumpLink=()=>{
+        console.log(this.props)
+        this.props.history.push('/topics');
+    }
+
 }

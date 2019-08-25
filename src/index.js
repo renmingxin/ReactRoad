@@ -23,6 +23,7 @@ import Home from './pages/Home/Home.js'
 import Activities from './pages/Activities/Activities.js'
 import Topics from './pages/Topics/Topics.js'
 import Login from './pages/Login/Login.js'
+import Article from './pages/Article/Article.js'
 import App from './App.js'
 
 const topList = [
@@ -114,6 +115,7 @@ ReactDOM.render(
             <Route path="/activities" component={Activities}></Route>
             <Route path="/topics" component={Topics}></Route>
             <Route path="/login" component={Login}></Route>
+            <Route path="/article/:id" component={Article}></Route>
             <Redirect to="/"></Redirect>
           </Switch>
         </App>
