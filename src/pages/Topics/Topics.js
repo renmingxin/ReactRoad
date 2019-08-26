@@ -11,7 +11,7 @@ export default class Topics extends Component {
         return (
             <ul>
                 {
-                    this.state.articleList.map(item=>(
+                    this.state.articleList.reverse().map(item=>(
                         <li key={item.id}>
                             <div className="articleList-author">{item.author}</div>
                             <Link to={{

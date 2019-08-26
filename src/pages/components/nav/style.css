@@ -3,3 +3,6 @@
     padding:0 50px;
     background-color:#fff;
 }
+.nav a {
+    margin-right: 10px;
+}
