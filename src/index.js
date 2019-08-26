@@ -26,6 +26,9 @@ import Login from './pages/Login/Login.js'
 import Article from './pages/Article/Article.js'
 import App from './App.js'
 
+//路由
+import PrivateRouter from './pages/components/privateRouter.js'
+
 const topList = [
     {
       id: 0,
@@ -113,7 +116,8 @@ ReactDOM.render(
             {/* 严格包含关系 */}
             <Route path="/" exact component={Home}></Route>
             <Route path="/activities" component={Activities}></Route>
-            <Route path="/topics" component={Topics}></Route>
+            {/* <Route path="/topics" component={Topics}></Route> */}
+            <PrivateRouter path="/topics" component={Topics}></PrivateRouter>
             <Route path="/login" component={Login}></Route>
             <Route path="/article/:id" component={Article}></Route>
             <Redirect to="/"></Redirect>

@@ -36,7 +36,7 @@ export default class Home extends Component {
     }
     handleSubmit=(e)=>{
         e.preventDefault();//阻止默认事件的发生
-
+        const isLogin = document.cookie.includes('login=true');
         const author = this.authorInput.current.value;
         const title = this.articleInput.current.value;
         const id = Math.floor(Math.random() * 1000000000);
@@ -46,7 +46,12 @@ export default class Home extends Component {
             author,
             title
         }
-        this.setArticleStorage(article);
+        if(isLogin) {
+            this.setArticleStorage(article);
+        }else {
+            alert('未登录，即将跳转到登录页面')
+            this.props.history.push('/login');
+        }
     }
 
     setArticleStorage = (article)=>{
