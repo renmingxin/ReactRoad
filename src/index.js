@@ -24,6 +24,7 @@ import Activities from './pages/Activities/Activities.js'
 import Topics from './pages/Topics/Topics.js'
 import Login from './pages/Login/Login.js'
 import Article from './pages/Article/Article.js'
+import NoMatch from './pages/noMatch/NoMatch.js'
 import App from './App.js'
 
 //路由
@@ -119,8 +120,9 @@ ReactDOM.render(
             {/* <Route path="/topics" component={Topics}></Route> */}
             <PrivateRouter path="/topics" component={Topics}></PrivateRouter>
             <Route path="/login" component={Login}></Route>
-            <Route path="/article/:id" component={Article}></Route>
-            <Redirect to="/"></Redirect>
+            <Route path="/article/:id" component={Article}></Route>{/**/}
+            <Route path="/error.html" component={NoMatch}></Route>
+            <Redirect to="/error.html"></Redirect>
           </Switch>
         </App>
     </Router>

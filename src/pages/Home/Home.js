@@ -4,7 +4,6 @@ export default class Home extends Component {
     authorInput = React.createRef();
     articleInput = React.createRef();
     render() {
-        console.log(this.authorInput)
         return (
             <div>
                 <header>发表话题</header>

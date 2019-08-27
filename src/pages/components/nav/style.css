@@ -3,6 +3,7 @@
     padding:0 50px;
     background-color:#fff;
 }
-.nav a {
+.nav span {
     margin-right: 10px;
+    cursor: pointer;
 }
