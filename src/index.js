@@ -27,6 +27,10 @@ import Article from './pages/Article/Article.js'
 import NoMatch from './pages/noMatch/NoMatch.js'
 import App from './App.js'
 
+//redux学习
+import ReduxTodoList from './pages/redux/component/ReduxTodoList.js'
+
+
 //路由
 import PrivateRouter from './pages/components/privateRouter.js'
 
@@ -107,42 +111,52 @@ const person = {
 }
 
 //react有两种组件的添加方法：1.函数式  2.类
+// ReactDOM.render(
+//   <>
+//     {/* React-Router使用 */}
+//     <Router>
+//         <App>
+//           {/*Switch： 匹配到一个就不会往下匹配 */}
+//           <Switch>
+//             {/* 严格包含关系 */}
+//             <Route path="/" exact component={Home}></Route>
+//             <Route path="/activities" component={Activities}></Route>
+//             {/* <Route path="/topics" component={Topics}></Route> */}
+//             <PrivateRouter path="/topics" component={Topics}></PrivateRouter>
+//             <Route path="/login" component={Login}></Route>
+//             <Route path="/article/:id" component={Article}></Route>{/**/}
+//             <Route path="/error.html" component={NoMatch}></Route>
+//             <Redirect to="/error.html"></Redirect>
+//           </Switch>
+//         </App>
+//     </Router>
+//     {/* React的生命周期 */}
+//     {/* <LifeCycle></LifeCycle> */}
+//     {/* ↓↓组件嵌套父子之间通信↓↓↓ */}
+//     {/* <TodoWrapper></TodoWrapper>  */}
+//     {/* ↓↓组件父传子对象props传递↓↓↓ */}
+//     {/* <Person {...person}></Person> */}
+//     {/* ↓↓组件父传子props传递↓↓↓ */}
+//     {/* <TagList list = { topList }></TagList> */}
+//     {/* 类写法 */}
+//     {/* <TodoList></TodoList> */}
+//     {/* 受控组件 */}
+//     {/* <Control></Control> */}
+//     {/* 非受控组件 */}
+//     {/* <UnControl></UnControl> */}
+//   </>, 
+//   document.getElementById('root')
+// );
+
+
+
+//2.redux的学习
 ReactDOM.render(
-  <>
-    {/* React-Router使用 */}
-    <Router>
-        <App>
-          {/*Switch： 匹配到一个就不会往下匹配 */}
-          <Switch>
-            {/* 严格包含关系 */}
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/activities" component={Activities}></Route>
-            {/* <Route path="/topics" component={Topics}></Route> */}
-            <PrivateRouter path="/topics" component={Topics}></PrivateRouter>
-            <Route path="/login" component={Login}></Route>
-            <Route path="/article/:id" component={Article}></Route>{/**/}
-            <Route path="/error.html" component={NoMatch}></Route>
-            <Redirect to="/error.html"></Redirect>
-          </Switch>
-        </App>
-    </Router>
-    {/* React的生命周期 */}
-    {/* <LifeCycle></LifeCycle> */}
-    {/* ↓↓组件嵌套父子之间通信↓↓↓ */}
-    {/* <TodoWrapper></TodoWrapper>  */}
-    {/* ↓↓组件父传子对象props传递↓↓↓ */}
-    {/* <Person {...person}></Person> */}
-    {/* ↓↓组件父传子props传递↓↓↓ */}
-    {/* <TagList list = { topList }></TagList> */}
-    {/* 类写法 */}
-    {/* <TodoList></TodoList> */}
-    {/* 受控组件 */}
-    {/* <Control></Control> */}
-    {/* 非受控组件 */}
-    {/* <UnControl></UnControl> */}
-  </>, 
-  document.getElementById('root')
-);
+    <>
+      <ReduxTodoList></ReduxTodoList>
+    </>,
+    document.getElementById('root')
+)
 
 
 
