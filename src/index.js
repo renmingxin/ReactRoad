@@ -29,6 +29,7 @@ import App from './App.js'
 
 //redux学习
 import ReduxTodoList from './pages/redux/component/ReduxTodoList.js'
+import Counter from './pages/redux/component/Counter.js'
 
 
 //路由
@@ -153,6 +154,7 @@ const person = {
 //2.redux的学习
 ReactDOM.render(
     <>
+      <Counter></Counter>
       <ReduxTodoList></ReduxTodoList>
     </>,
     document.getElementById('root')
