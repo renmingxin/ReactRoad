@@ -9,6 +9,8 @@ import {
   NavLink   //提供活动标识链接 （高亮代表选择）
 } from 'react-router-dom';
 
+
+
 import './index.css'
 import './style/routerCss.css'
 import TodoList from './components/TodoList.js'
@@ -30,7 +32,8 @@ import App from './App.js'
 //redux学习
 import ReduxTodoList from './pages/redux/component/ReduxTodoList.js'
 import Counter from './pages/redux/component/Counter.js'
-
+import { Provider } from 'react-redux'
+import store from './pages/redux/index.js'
 
 //路由
 import PrivateRouter from './pages/components/privateRouter.js'
@@ -153,10 +156,10 @@ const person = {
 
 //2.redux的学习
 ReactDOM.render(
-    <>
+    <Provider store={store}>
       <Counter></Counter>
       <ReduxTodoList></ReduxTodoList>
-    </>,
+    </Provider>,
     document.getElementById('root')
 )
 

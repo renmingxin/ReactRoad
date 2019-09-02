@@ -1,5 +1,7 @@
 import React from 'react';
 import store from '../index.js'
+import { connect } from 'react-redux'
+
 import * as Actions from '../actions/counter.js'
 
 class Counter extends React.Component{
@@ -35,4 +37,13 @@ class Counter extends React.Component{
     // }
 }
 
-export default Counter;
+const mapStateToProps = (state) =>({
+    count: state.counter.count
+})
+
+const mapDispatchToProps = (dispatch) =>({
+
+})
+
+//参数是俩对象
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
