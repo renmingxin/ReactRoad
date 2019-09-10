@@ -9,7 +9,6 @@ class LifeCycle extends React.Component{
     static defaultProps = {}
     static propTypes = {}
 
-    
     constructor(){
         console.log('1.constructor')
         super();
@@ -38,7 +37,6 @@ class LifeCycle extends React.Component{
                     :''
                 }
                  */}
-                 
                  <LifeCycle167 n={this.state.count}></LifeCycle167>
             </>
         )

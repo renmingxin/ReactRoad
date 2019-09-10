@@ -5,7 +5,6 @@ import MenuLink from '../MenuLink.js'
 
 import './style.css'
 
-console.log(withRouter)
 // 手写withRouter:解决 不是页面级的router
 // const withRouter = (Component)=>{
 //     console.log(Component);
