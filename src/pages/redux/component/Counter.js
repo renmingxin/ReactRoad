@@ -1,35 +1,41 @@
 import React from 'react';
-import store from '../index.js'
-import { connect } from 'react-redux'
+// import store from '../index.js' // 一起注释的行
+import { connect } from 'react-redux' //connect方法
 
 import * as Actions from '../actions/counter.js'
 
 class Counter extends React.Component{
 
-    state = {
-        count:store.getState().counter.count
-    }
+    // 一起注释的行
+    // state = {
+    //     count:store.getState().counter.count 
+    // }
 
-    componentDidMount(){
-        store.subscribe(()=>{
-            this.setState({
-                count:store.getState().counter.count
-            })
-        })
-    }
+    // 一起注释的行
+    // componentDidMount(){
+    //     store.subscribe(()=>{
+    //         this.setState({
+    //             count:store.getState().counter.count
+    //         })
+    //     })
+    // }
 
     render(){
         return (
             <div>
-                <span>{ this.state.count }</span>
+                {/* <span>{ this.state.count }</span> */}
+                <span>{this.props.count}</span>
                 <button onClick={this.handleAdd}>Add</button>
             </div>
         )
     }
 
     handleAdd=()=>{
-        const action = Actions.getCountAddAction();
-        store.dispatch(action);
+        //// 一起注释的行
+        // const action = Actions.getCountAddAction();
+        // store.dispatch(action);
+
+        this.props.add();
     }
 
     // handleStoreChange = ()=>{
@@ -42,7 +48,9 @@ const mapStateToProps = (state) =>({
 })
 
 const mapDispatchToProps = (dispatch) =>({
-
+    add:()=>{
+        dispatch(Actions.getCountAddAction())
+    }
 })
 
 //参数是俩对象

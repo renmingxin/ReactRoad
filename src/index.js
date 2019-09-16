@@ -32,7 +32,7 @@ import App from './App.js'
 //redux学习
 import ReduxTodoList from './pages/redux/component/ReduxTodoList.js'
 import Counter from './pages/redux/component/Counter.js'
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux'//npm install react-redux --save
 import store from './pages/redux/index.js'
 
 //路由
@@ -105,7 +105,7 @@ const topList = [
       new: true,
       hot: '20万'
     }
-  ]
+]
 
 const person = {
   // name:'rmx',
