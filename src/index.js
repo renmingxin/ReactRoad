@@ -47,10 +47,13 @@ import App from './App.js'
 
 
 //4.自我封装redux-combineReducers 
-import TodoList from './pages/MyRedux_combineReducers/components/TodoList';
-import Counter from './pages/MyRedux_combineReducers/components/Counter';
+// import TodoList from './pages/MyRedux_combineReducers/components/TodoList';
+// import Counter from './pages/MyRedux_combineReducers/components/Counter';
 
 
+//5.自我封装redux-bindActionCreator
+import TodoList from './pages/MyRedux_bindActionCreator/components/TodoList';
+import Counter from './pages/MyRedux_bindActionCreator/components/Counter';
 
 
 const topList = [
@@ -197,6 +200,19 @@ const person = {
 
 
 //4.自己封装redux-combineReducers
+// ReactDOM.render(
+//     <>
+//         <Counter></Counter>
+//         <TodoList></TodoList>
+//     </>,
+//     document.getElementById('root')
+// )
+
+
+
+
+
+//5.自己封装redux-bindActionCreator
 ReactDOM.render(
     <>
         <Counter></Counter>
@@ -204,8 +220,6 @@ ReactDOM.render(
     </>,
     document.getElementById('root')
 )
-
-
 
 
 

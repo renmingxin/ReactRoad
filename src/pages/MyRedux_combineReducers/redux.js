@@ -79,13 +79,10 @@ export const createStore = (reducer, preloadedState, enhancer)=>{
 
 
 
-
-
 const reducers = {
     todoList,
     counter,
 }
-
 /**
  * combineReducers
  */
