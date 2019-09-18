@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { bindActionCreator as myBindActionCreators } from '../redux';
+
 import {connect} from 'react-redux';
 // import { getCountAddAction } from '../store/actions/counter';
 import * as actions from '../store/actions/counter';
@@ -34,6 +36,7 @@ const mapStateToProps = (state) => state.counter;
 // })
 
 
-// const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch)
+const mapDispatchToProps = (dispatch) => myBindActionCreators(actions, dispatch)
 
-export default connect(mapStateToProps, actions)(Counter);
+// export default connect(mapStateToProps, actions)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
