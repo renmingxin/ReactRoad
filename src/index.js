@@ -13,7 +13,7 @@ import {
 
 import './index.css'
 import './style/routerCss.css'
-import TodoList from './components/TodoList.js'
+// import TodoList from './components/TodoList.js'
 import TagList from './components/TagList.js'
 import Control from './components/Control.js'
 import UnControl from './components/UnControl.js'
@@ -37,6 +37,13 @@ import store from './pages/redux/index.js'
 
 //路由
 import PrivateRouter from './pages/components/privateRouter.js'
+
+
+
+//自我封装redux
+import TodoList from './pages/MyRedux/components/TodoList';
+import Input from './pages/MyRedux/components/Input';
+
 
 const topList = [
     {
@@ -155,15 +162,25 @@ const person = {
 
 
 //2.redux的学习
+// ReactDOM.render(
+//     <Provider store={store}>
+//       <Counter></Counter>
+//       <ReduxTodoList></ReduxTodoList>
+//     </Provider>,
+//     document.getElementById('root')
+// )
+
+
+
+
+//3.自己封装的redux
 ReactDOM.render(
-    <Provider store={store}>
-      <Counter></Counter>
-      <ReduxTodoList></ReduxTodoList>
-    </Provider>,
+    <>
+        <TodoList></TodoList>
+        <Input></Input>
+    </>,
     document.getElementById('root')
 )
-
-
 
 
 
