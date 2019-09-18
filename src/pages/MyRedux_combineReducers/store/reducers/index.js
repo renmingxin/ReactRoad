@@ -1,9 +1,11 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 import todoList from './todoList';
 import counter from './counter';
 
-export default combineReducers({
+import {combineReducers as combine } from '../../redux'
+
+export default combine({
   todoList,
-  counter
+  counter,
 })
 

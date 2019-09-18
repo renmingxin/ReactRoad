@@ -29,27 +29,26 @@ import Article from './pages/Article/Article.js'
 import NoMatch from './pages/noMatch/NoMatch.js'
 import App from './App.js'
 
-//redux学习
-import ReduxTodoList from './pages/redux/component/ReduxTodoList.js'
-import Counter from './pages/redux/component/Counter.js'
-import { Provider } from 'react-redux'//npm install react-redux --save
-import store from './pages/redux/index.js'
+//2.redux学习
+// import ReduxTodoList from './pages/redux/component/ReduxTodoList.js'
+// import Counter from './pages/redux/component/Counter.js'
+// import { Provider } from 'react-redux'//npm install react-redux --save
+// import store from './pages/redux/index.js'
 
 //路由
-import PrivateRouter from './pages/components/privateRouter.js'
+// import PrivateRouter from './pages/components/privateRouter.js'
 
 
 
-//自我封装redux-createStore
-import TodoList from './pages/MyRedux_createStore/components/TodoList';
-import Input from './pages/MyRedux_createStore/components/Input';
+//3.自我封装redux-createStore
+// import TodoList from './pages/MyRedux_createStore/components/TodoList';
+// import Input from './pages/MyRedux_createStore/components/Input';
 
 
 
-
-
-//自我封装redux-combineReducers 
-
+//4.自我封装redux-combineReducers 
+import TodoList from './pages/MyRedux_combineReducers/components/TodoList';
+import Counter from './pages/MyRedux_combineReducers/components/Counter';
 
 
 
@@ -200,8 +199,8 @@ const person = {
 //4.自己封装redux-combineReducers
 ReactDOM.render(
     <>
+        <Counter></Counter>
         <TodoList></TodoList>
-        <Input></Input>
     </>,
     document.getElementById('root')
 )
