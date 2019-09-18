@@ -40,9 +40,18 @@ import PrivateRouter from './pages/components/privateRouter.js'
 
 
 
-//自我封装redux
-import TodoList from './pages/MyRedux/components/TodoList';
-import Input from './pages/MyRedux/components/Input';
+//自我封装redux-createStore
+import TodoList from './pages/MyRedux_createStore/components/TodoList';
+import Input from './pages/MyRedux_createStore/components/Input';
+
+
+
+
+
+//自我封装redux-combineReducers 
+
+
+
 
 
 const topList = [
@@ -173,7 +182,22 @@ const person = {
 
 
 
-//3.自己封装的redux
+//3.自己封装的redux-createStore
+// ReactDOM.render(
+//     <>
+//         <TodoList></TodoList>
+//         <Input></Input>
+//     </>,
+//     document.getElementById('root')
+// )
+
+
+
+
+
+
+
+//4.自己封装redux-combineReducers
 ReactDOM.render(
     <>
         <TodoList></TodoList>
@@ -181,13 +205,6 @@ ReactDOM.render(
     </>,
     document.getElementById('root')
 )
-
-
-
-
-
-
-
 
 
 

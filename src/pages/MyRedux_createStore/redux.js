@@ -29,6 +29,7 @@ export const createStore = (reducer, preloadedState, enhancer)=>{
 
     let state = preloadedState;
     let listeners = [];
+    let isDispatching = false;
 
     const getState = () => state;  //const getState = () => {return state}
 
@@ -40,12 +41,28 @@ export const createStore = (reducer, preloadedState, enhancer)=>{
             throw new Error('传入的action.type的值不能为undefined')
         }
 
-        state = reducer( state, action );
+        if(isDispatching){
+            throw new Error('不能在reducer中调用dispatch')
+        }
+
+        try{
+            isDispatching = true;
+            state = reducer( state, action );
+        }finally{
+            isDispatching = false;
+        }
+        
+
         listeners.forEach( item => item() );
     }; 
 
     const subscribe = fn =>{
         listeners.push(fn) //方法数组
+
+        return ()=>{ //返回一个取消订阅的函数
+            const index = listeners.indexOf(fn);
+            listeners.splice(index,1);
+        }
     }
 
     dispatch({type: ActionTypes.INIT});

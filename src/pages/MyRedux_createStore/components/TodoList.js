@@ -8,7 +8,7 @@ class c extends Component {
   state = store.getState()
 
   componentDidMount () {
-    store.subscribe(this.handleStoreChange);
+    this.unsub = store.subscribe(this.handleStoreChange);
   }
 
   render () {
@@ -59,6 +59,7 @@ class c extends Component {
 
   handleStoreChange = () => {
     this.setState(store.getState());
+    // this.unsub();
   }
 }
 

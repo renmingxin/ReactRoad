@@ -11,11 +11,10 @@ function reducer(state = initState, action){
     switch (action.type) {
         case 'CHANGE_VAL':
             newState.inpVal = action.value;
-            store.dispatch({type:'console'})
+            // store.dispatch({type:'console'})
             return newState;
             break;
         case 'console':
-            console.log('aaaaa');
             return newState;
         default:
             break;
@@ -30,9 +29,10 @@ class Input extends Component{
     state = store.getState();
 
     componentDidMount(){
-        store.subscribe(()=>{
+        this.unsub = store.subscribe(()=>{
             this.setState(store.getState());
-        })
+            this.unsub();
+        });
     }
 
     render() {
