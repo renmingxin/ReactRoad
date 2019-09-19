@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { bindActionCreator as myBindActionCreators } from '../redux';
 
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
+import { connect } from '../react-redux'
 // import { getCountAddAction } from '../store/actions/counter';
 import * as actions from '../store/actions/counter';
 
 class Counter extends Component {
-
   render () {
     return (
       <div>

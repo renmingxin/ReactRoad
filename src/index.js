@@ -54,7 +54,8 @@ import App from './App.js'
 //5.自我封装redux-bindActionCreator  Provieder&connect
 import TodoList from './pages/MyRedux_bindActionCreator/components/TodoList';
 import Counter from './pages/MyRedux_bindActionCreator/components/Counter';
-import { Provieder as MyProvieder } from './pages/MyRedux_bindActionCreator/react-redux'
+import { Provider as MyProvieder } from './pages/MyRedux_bindActionCreator/react-redux'
+import store from './pages/MyRedux_bindActionCreator/store/index'
 
 const topList = [
     {
@@ -215,9 +216,9 @@ const person = {
 //5.自己封装redux-bindActionCreator
 ReactDOM.render(
     <>
-        <MyProvieder>
+        <MyProvieder store={store}>
             <Counter></Counter>
-            <TodoList></TodoList>
+            {/* <TodoList></TodoList> */}
         </MyProvieder>
     </>,
     document.getElementById('root')
